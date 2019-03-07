@@ -1,7 +1,7 @@
-# Simple RPG Game aka unit_4_game
+# Simple RPG game aka unit_4_game
 
 ## Description
-This was our first assignment using jQuery, manipulating the DOM. The minimum requirements of the game are listed below:
+This was our first homework, advanced assignment, using jQuery, manipulating the DOM. The minimum requirements of the game are listed below:
 * Pick a player
 * Pick an apponent
 * Each time an event (click) is performed, damage is done
