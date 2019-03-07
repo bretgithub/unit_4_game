@@ -37,7 +37,7 @@ let oppSlay;
 function startGame() {
 
     var audioElement = document.createElement("audio");
-    audioElement.setAttribute("src", "assets/javascript/carly2.mp3");
+    audioElement.setAttribute("src", "assets/javascript/ari.mp3");
 
     // Music Button
     $(".theme-button").on("click", function () {
@@ -98,54 +98,69 @@ function startGame() {
 
     // when slay button is clicked
     $("#slaybutton").click(function () {
+        // checks conidtions if divas are still alive
         if (player.hp > 0 && currentOpponent.hp > 0) {
             console.log("Player HP: " + player.hp);
             console.log("Opponent HP: " + currentOpponent.hp);
+            // gets slay power at random from maximum 
             charSlay = Math.floor(Math.random() * player.slay) + 1;
             oppSlay = Math.floor(Math.random() * currentOpponent.slay) + 1;
+            // deals slay attack to opponent
             currentOpponent.hp = currentOpponent.hp - charSlay;
+            // displays slay dealt
             $("#opposing-health").html("Health: " + currentOpponent.hp);
             console.log("Player SLAY points: " + charSlay)
+            // calls function to update diva's attributes
             slayDialogue();
 
-            // $("#slay-dialogue").html("");
+            // if opponent still is alive after you slay, they slay back
             if (currentOpponent.hp > 0) {
                 console.log("Opponent SLAY points: " + oppSlay)
+                // opponent slay is reduced from your health
                 player.hp = player.hp - oppSlay;
+                // displys slay dealt 
                 $("#your-health").html("Health: " + player.hp);
+                // calls funtion to update diva's attributes
                 slayDialogue()
                 console.log(currentOpponent.hp);
                 console.log(player.hp);
             }
         }
 
+        // win / loss cases
         if (currentOpponent.hp < 1 && player.hp > 0) {
             console.log("you won");
             alert("You've SLAYED '" + currentOpponent.name + "' Choose another Diva to SLAY");
+            // resets the attributes
             $("#slay-dialogue").html("");
+            // removes your diva from the divas array
             for (p = 0; p < divas.length; p++) {
                 if (divas[p].name === currentOpponent.name) { //indexOf -- alive.indexOd(currentOpponent.name)
                     divas.splice(p, 1);
                 }
             }
-            currentOpponent = null; //reset opponent
+            // reset opponent so player can pick another
+            currentOpponent = null;
+            // resets attributes
             $("#opposing-diva").html("");
+            // if divas array has length of 1, game restarts because no more divas left to slay
             if (divas.length === 1) {
                 alert("'" + player.name + "' has SLAYED all the Divas! Click ok to SLAY again");
                 location.reload(true);
             }
-            // return currentOpponent;
-            // } else if (char.hp[player] < char.hp[currentOpponent] && char.hp[player] < 1) {
+
+            // if opponent wins
         } else if (currentOpponent.hp > 1 && player.hp < 1) {
             console.log("you lost");
             alert("You were SLAYED by '" + currentOpponent.name + "' Choose another Diva to SLAY");
+            // reset player attributes
             $("#slay-dialogue").html("");
             for (w = 0; w < divas.length; w++) {
                 if (divas[w].name === player.name) { //indexOf -- alive.indexOd(currentOpponent.name)
                     divas.splice(w, 1);
                 }
             }
-            player = null; //reset opponent
+            player = null;
             $("#your-diva").html("");
             if (divas.length === 1) {
                 alert("'" + currentOpponent.name + "' has SLAYED all the Divas! Click ok to SLAY again");
