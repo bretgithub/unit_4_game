@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Battle of the Pop Divas!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap File -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Linked style page  -->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Pop diva -->
+        <div class="jumbotron text-center">
+            <div class="row">
+                <div class="col-md-10">
+                    <h1 class="display-4">Pop Diva Battle Royale</h1>
+                </div>
+
+                <div class="col-md-2">
+                    <div id="musicControls" class="text-center">
+                        <button class="btn btn-light btn-xs theme-button jumboBtn">
+                            <span class="fa fa-play"></span></button>
+                        <button class="btn btn-light btn-xs pause-button jumboBtn">
+                            <span class="fa fa-pause"></span></button>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <p class="lead col-md-10" id="lead">
+                There can only be one Pop Diva! Pick your Diva to SLAY on the red carpet, your Diva will have to
+                literally SLAY other opponents to be the last Diva standing.
+                <br>
+                <br>
+                Once you have selected your Diva, select an opposing Diva to enter the SLAY arena, then SLAY SLAY SLAY,
+                whoever SLAYS the most, wins!
+            </p>
+        </div>
+        <!-- Pick a diva area  -->
+
+        <section id="pick your divas">
+            <div class="row">
+
+                <div class="card" style="width: 100%;">
+                    <div class="card-header">
+                        <h4 class="card-title">Pick your pop divas to slay</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row">
+
+                            <div class="col-md-3 diva" id="Gaga">
+                                <div class="card divas">
+                                    <img class="card-img-top" src="assets/images/gaga2.png" alt="ladygaga">
+                                    <div class="card-body">
+                                        <h4 class="card-title" id="divaSelect">Gaga</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 diva" id="Carly">
+                                <div class="card divas">
+                                    <img class="card-img-top" src="assets/images/carly2.png" alt="carlyrae">
+                                    <div class="card-body">
+                                        <h4 class="card-title" id="divaSelect">Carly</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 diva" id="Ari">
+                                <div class="card divas">
+                                    <img class="card-img-top" src="assets/images/ari3.png" alt="ariana">
+                                    <div class="card-body">
+                                        <h4 class="card-title" id="divaSelect">Ari</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ 1st card row -->
+
+                        <div class="row">
+
+                            <div class="col-md-3 diva" id="Tinashe">
+                                <div class="card divas">
+                                    <img class="card-img-top" src="assets/images/tinashe3.png" alt="tinashe">
+                                    <div class="card-body">
+                                        <h4 class="card-title" id="divaSelect">Tinashe</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 diva" id="Taylor">
+                                <div class="card divas">
+                                    <img class="card-img-top" src="assets/images/taylor2.png" alt="taylor">
+                                    <div class="card-body">
+                                        <h4 class="card-title" id="divaSelect">Taylor</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 diva" id="Katy">
+                                <div class="card divas">
+                                    <img class="card-img-top" src="assets/images/katy2.png" alt="katy">
+                                    <div class="card-body">
+                                        <h4 class="card-title" id="divasSelect">Katy</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--/ 2nd card row -->
+
+                    </div>
+                    <!--/ card-body -->
+
+                </div>
+                <!--/ card header -->
+
+            </div>
+            <!--/ ccard ontainer row  -->
+        </section>
+
+        <!-- Diva arena  -->
+
+        <section id="game-area">
+            <div class="row">
+
+                <div class="col-md-3 card" style="width: 100%;" id="slay">
+                    <div class="card-header">
+                        <h4 class="card-title">Your Diva</h4>
+                    </div>
+                    <div class="card-body" id="your-diva">
+
+                        <div class="row">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 card" style="width: 100%;" id="slay">
+                    <div class="card-header">
+                        <h4 class="card-title">Opposing Diva</h4>
+                    </div>
+                    <div class="card-body" id="opposing-diva">
+
+                        <div class="row">
+                        </div>
+                    </div>
+                </div>
+                <!--/ card -->
+            </div>
+            <!--/ col-md-6  -->
+
+            <!-- Slay button -->
+            <section id="slay-button">
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <div class="alert alert-danger" id="slay-dialogue" role="alert">
+
+                        </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+
+                <div class="row text-center" id="slay-btn">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-danger btn-lg btn-block" id="slaybutton">SLAY</button>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+            </section>
+        </section>
+        <!-- Diva arena -->
+    </div>
+    <!-- container -->
+
+
+
+
+    </section>
+    <!-- game area -->
+
+    <!-- jQuery, javascript file for the Bootstrap's javascript file to function -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap's javascript file that allows the dropdown menu to work  -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- JavaScript -->
+    <script src="assets/javascript/script.js"></script>
+
+
+</body>
+
+</html>

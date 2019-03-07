@@ -1,0 +1,99 @@
+
+body {
+   background: url('../images/redcarpet.png') no-repeat;
+   background-size: cover;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   
+}
+
+h1,h2,h3,h4,h5,h6 {
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   text-transform: uppercase;
+   word-break: keep-all ;
+}
+
+.hide {
+   display: none;
+}
+
+.jumbotron {
+   opacity: 0.8;
+   background-color: darkgrey;
+   color: #fff;
+   padding: 2rem;
+}
+
+.jumbotron:hover {
+   opacity: 1.0;
+   background-color: darkgrey;
+   color: #fff;
+   padding: 2rem;
+}
+
+.jumboBtn {
+   background-color: slateblue;
+   color: white;
+   margin-top: 10px;
+   margin-bottom: 3px;
+   margin-right: 3px;
+   margin-left: 3px;
+}
+
+#lead {
+   text-align: left!important;
+}
+
+.container {
+   padding: 40px;
+}
+
+section {
+   margin: 40px 0;
+}
+
+.divas {
+   opacity: .8;
+}
+
+.row {
+   justify-content: center;
+}
+
+.divas:hover  {
+   opacity: 1;
+   border: 1px solid;
+   box-shadow: 5px 8px darkgrey;
+}
+
+img {
+   display: block;
+   max-height: 400px;
+   max-width: 600px;
+   height: auto;
+   width: auto;
+}
+
+.card {
+   margin: 0px 0px 10px 0px;
+}
+
+#opposing-diva {
+   text-align: left;
+   
+}
+
+#slay {
+   margin: 0px 5px;
+}
+
+#your-diva {
+   text-align: left;
+}
+
+#game-area {
+   opacity: 0.8; 
+}
+
+#game-area:hover {
+   opacity: 1; 
+}
