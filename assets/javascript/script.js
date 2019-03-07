@@ -7,6 +7,8 @@ Few things I did not get to:
 5. Cleaning up code - writing more functions, consolidating code 
 6. Make responsive
 7. Found that in one round the player had negative hp and opponent was above 0 hp, the game did not reset, became stuck and had to reload
+8. Loop music if one file
+9. Play next song if pick at random when one ends
 */
 
 // starting the game on window load
