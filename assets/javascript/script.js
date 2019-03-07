@@ -1,3 +1,13 @@
+/*
+Few things I did not get to:
+1. Resetting the game with a function, not a window reload
+2. Adding an increasing slaw power with each slay to give more power to the player
+3. Regenerating health after a diva has slayed another
+4. Music randomizer
+5. Cleaning up code - writing more functions, consolidating code 
+6. Make responsive
+*/
+
 // starting the game on window load
 window.onload = startGame();
 
@@ -12,7 +22,7 @@ class newDiva {
 }
 
 // assigning the divas
-let ari = new newDiva("Ari", 30, 15, "assets/images/ari3.png");
+let ari = new newDiva("Ari", 40, 15, "assets/images/ari3.png");
 console.log(ari)
 let gaga = new newDiva("Gaga", 25, 12, "assets/images/gaga2.png");
 console.log(gaga);
@@ -33,11 +43,20 @@ let currentOpponent = null;
 let playerSlay;
 let oppSlay;
 
+// tried to set up object with usic paths, to then at random play a song but thought it could be an array? not sure how to proceed
+// let music = {
+//     ariSong: "assets/javascript/ari.mp3",
+//     carlySong: "assets/javascript/carly2.mp3",
+//     katySong: "assets/javascript/katy.mp3",
+//     gagaSong: "assets/javascript/ladygaga.mp3"
+// }
+
 // on window load the game initializes with startGame function
 function startGame() {
 
+    // plays a song, want it to be picj at random but didn't get there
     var audioElement = document.createElement("audio");
-    audioElement.setAttribute("src", "assets/javascript/ari.mp3");
+    audioElement.setAttribute("src", "assets/javascript/carly2.mp3");
 
     // Music Button
     $(".theme-button").on("click", function () {
@@ -162,6 +181,7 @@ function startGame() {
             }
             player = null;
             $("#your-diva").html("");
+            // if you lose and there are no other divas except the opponent the window reloads restarting the game
             if (divas.length === 1) {
                 alert("'" + currentOpponent.name + "' has SLAYED all the Divas! Click ok to SLAY again");
                 location.reload(true);
@@ -189,9 +209,3 @@ function startGame() {
 // }
 
 
-// update when you have beat all the divas
-
-// reset page on javsascript 
-// or reset game function 
-
-//replace aletrs with modals
