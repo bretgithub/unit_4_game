@@ -204,8 +204,8 @@ function startGame() {
 //     $("#your-diva").html("");
 //     $(".diva").show();
 //     startGame();
-//     // restore their individual hp their
-//     // wrap entire game in a funtion rthen call that function inhere
+//     // restore their individual hp 
+//     // wrap entire game in a funtion rthen call that function in here
 // }
 
 
