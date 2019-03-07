@@ -1,17 +1,19 @@
+"use strict";
 /*
 Few things I did not get to:
 1. Resetting the game with a function, not a window reload
 2. Adding an increasing slaw power with each slay to give more power to the player
 3. Regenerating health after a diva has slayed another
-4. Music randomizer
-5. Cleaning up code - writing more functions, consolidating code 
-6. Make responsive
+4. Cleaning up code - writing more functions, consolidating code 
+5. Make responsive
 7. Found that in one round the player had negative hp and opponent was above 0 hp, the game did not reset, became stuck and had to reload
-8. Loop music if one file
-9. Play next song if pick at random when one ends
+9. Loop music if one file
+10. Play next song if pick at random when one ends
 */
-
 // starting the game on window load
+let music = ["assets/javascript/carly2.mp3", "assets/javascript/ari.mp3", "assets/javascript/katy.mp3", "assets/javascript/ladygaga.mp3", "assets/javascript/tinashe.mp3", "assets/javascript/taylor.mp3"];
+let randomMusic = music[Math.floor((Math.random() * 6))];
+
 window.onload = startGame();
 
 // creating the diva constructors
@@ -46,22 +48,14 @@ let currentOpponent = null;
 let playerSlay;
 let oppSlay;
 
-// tried to set up object with usic paths, to then at random play a song but thought it could be an array? not sure how to proceed
-// let music = {
-//     ariSong: "assets/javascript/ari.mp3",
-//     carlySong: "assets/javascript/carly2.mp3",
-//     katySong: "assets/javascript/katy.mp3",
-//     gagaSong: "assets/javascript/ladygaga.mp3"
-// }
-
 // on window load the game initializes with startGame function
 function startGame() {
 
-    // plays a song, want it to be picj at random but didn't get there
-    var audioElement = document.createElement("audio");
-    audioElement.setAttribute("src", "assets/javascript/carly2.mp3");
+    // plays random song picked from randomMusic variable
+    let audioElement = document.createElement("audio");
+    audioElement.setAttribute("src", randomMusic);
 
-    // Music Button
+    // music button
     $(".theme-button").on("click", function () {
         audioElement.play();
     });
