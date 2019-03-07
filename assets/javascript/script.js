@@ -1,5 +1,7 @@
+// starting the game on window load
 window.onload = startGame();
 
+// creating the diva constructors
 class newDiva {
     constructor(name, hp, slay, pic) {
         this.name = name;
@@ -8,6 +10,8 @@ class newDiva {
         this.pic = pic;
     }
 }
+
+// assigning the divas
 let ari = new newDiva("Ari", 30, 15, "assets/images/ari3.png");
 console.log(ari)
 let gaga = new newDiva("Gaga", 25, 12, "assets/images/gaga2.png");
@@ -21,17 +25,16 @@ console.log(tinashe);
 let katy = new newDiva("Katy", 10, 8, "assets/images/katy2.png");
 console.log(katy);
 
+// global variables 
 let divas = [ari, gaga, carly, tSwift, tinashe, katy];
 console.log(divas);
-let player = null; // is null and undefined is falsey,, !player is truthy
+let player = null; // is null and undefined is falsey, !player is truthy
 let currentOpponent = null;
 let playerSlay;
 let oppSlay;
-let alive = [];
 
+// on window load the game initializes with startGame function
 function startGame() {
-
-    //on page load initialize game function
 
     var audioElement = document.createElement("audio");
     audioElement.setAttribute("src", "assets/javascript/carly2.mp3");
@@ -44,45 +47,40 @@ function startGame() {
         audioElement.pause();
     });
 
-    // could start out as alive and not player put this.alive = true, this.player = false within class
-    // .makeCard function {
-    // sets all the card attributes in document
-    // } - do this after , can add methods and anything of this type and has menthod 
-
-    // function initCharacters() {
-
+    // choosing your diva 
     $(".diva").click(function () {
         console.log($(this).attr("id"));
-        if (!player) { // is this falsey
-            player = $(this).attr("id"); //name stored as player
-            for (q = 0; q < divas.length; q++) { //looping through all divas
-                if (player === divas[q].name) { // if player name = divas name then set t
+        // !player is this truthy therefore it lets you choose a character
+        if (!player) {
+            // .name is stored as player
+            player = $(this).attr("id");
+            // looping through all divas
+            for (q = 0; q < divas.length; q++) {
+                // if player name = divas.name then set player as that diva at the specified index
+                if (player === divas[q].name) {
                     player = divas[q];
                     console.log(player);
-                    $("#" + player.name).hide();//set player to diva // template literal - $(`#${player.name}`).hide();
+                    // hide player from available divas arena and show player's diva in YOUR DIVA with inherited attributes
+                    $("#" + player.name).hide(); // also can be expressed as a template literal: $(`#${player.name}`).hide();
                     $("#your-diva").append("<img class='card-img-top' src=" + player.pic + " />");
                     $("#your-diva").append("<h4 class='card-title' id='divaSelect'> " + player.name + " </h4>");
                     $("#your-diva").append("<p class='card-text' id='your-health'> Health: " + player.hp + " </p>");
                     $("#your-diva").append("<p class='card-text'> Slay Power: " + player.slay + " </p>");
-                    // $("#" + player.name).show(function () {
-                    //     ("#your-diva").append("<h2>testing</h2>");
-                    // });
                 }
             }
 
-            // for (k = 0; k < divas.length; k++) {
-            //     if (divas[k].name !== player.name) {
-            //         alive.push(divas[k]);
-            //     }
-            // }
-
+            // now that player is stored you choose an opposing diva if currentOpponent is truthy
         } else if (!currentOpponent) {
+            // .name is stored as currentOpponent
             currentOpponent = $(this).attr("id");
-            for (q = 0; q < divas.length; q++) { //looping through all divas
-                if (currentOpponent === divas[q].name && currentOpponent != player.name) { // if player name = divas name then set t
-                    currentOpponent = divas[q]; //set player to diva
+            //looping through all divas
+            for (q = 0; q < divas.length; q++) {
+                // if currentOpponent name = divas.name and currentOpponent name is not player.name set opponent as that diva at specified index
+                if (currentOpponent === divas[q].name && currentOpponent != player.name) {
+                    currentOpponent = divas[q];
                     console.log(currentOpponent);
-                    $("#" + currentOpponent.name).hide();//set player to diva // template literal - $(`#${currentOpponent.name}`).hide();
+                    // hide player from available divas arena and show player's diva in YOUR DIVA with inherited attributes
+                    $("#" + currentOpponent.name).hide(); // also can be expressed as a template literal: $(`#${currentOpponent.name}`).hide();
                     $("#opposing-diva").append("<img class='card-img-top' src=" + currentOpponent.pic + " />");
                     $("#opposing-diva").append("<h4 class='card-title' id='divaSelect'> " + currentOpponent.name + " </h4>");
                     $("#opposing-diva").append("<p class='card-text' id='opposing-health'> Health: " + currentOpponent.hp + " </p>");
@@ -92,12 +90,13 @@ function startGame() {
         }
     });
 
-
+    // replace the slay arena hp for divas with real time data
     function slayDialogue() {
         $("#slay-dialogue").html("<p> You've dealt '" + currentOpponent.name + "' '" + charSlay + "' points of SLAY damage </p>");
         $("#slay-dialogue").append("<p> You've been dealt '" + oppSlay + "' points of SLAY damage by '" + currentOpponent.name + "' </p>");
     }
 
+    // when slay button is clicked
     $("#slaybutton").click(function () {
         if (player.hp > 0 && currentOpponent.hp > 0) {
             console.log("Player HP: " + player.hp);
