@@ -6,6 +6,7 @@ Few things I did not get to:
 4. Music randomizer
 5. Cleaning up code - writing more functions, consolidating code 
 6. Make responsive
+7. Found that in one round the player had negative hp and opponent was above 0 hp, the game did not reset, became stuck and had to reload
 */
 
 // starting the game on window load
