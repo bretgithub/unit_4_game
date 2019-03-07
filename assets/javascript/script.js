@@ -1,4 +1,4 @@
-"use strict";
+
 /*
 Few things I did not get to:
 1. Resetting the game with a function, not a window reload
@@ -11,7 +11,11 @@ Few things I did not get to:
 10. Play next song if pick at random when one ends
 */
 // starting the game on window load
+"use strict";
+
+// had to set the music and randomMusic variables before call startGame so the music will play
 let music = ["assets/javascript/carly2.mp3", "assets/javascript/ari.mp3", "assets/javascript/katy.mp3", "assets/javascript/ladygaga.mp3", "assets/javascript/tinashe.mp3", "assets/javascript/taylor.mp3"];
+
 let randomMusic = music[Math.floor((Math.random() * 6))];
 
 window.onload = startGame();
