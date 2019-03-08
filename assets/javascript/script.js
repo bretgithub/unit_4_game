@@ -75,7 +75,7 @@ function startGame() {
             // .name is stored as player
             player = $(this).attr("id");
             // looping through all divas
-            for (q = 0; q < divas.length; q++) {
+            for (let q = 0; q < divas.length; q++) {
                 // if player name = divas.name then set player as that diva at the specified index
                 if (player === divas[q].name) {
                     player = divas[q];
@@ -94,10 +94,10 @@ function startGame() {
             // .name is stored as currentOpponent
             currentOpponent = $(this).attr("id");
             //looping through all divas
-            for (q = 0; q < divas.length; q++) {
+            for (let w = 0; w < divas.length; w++) {
                 // if currentOpponent name = divas.name and currentOpponent name is not player.name set opponent as that diva at specified index
-                if (currentOpponent === divas[q].name && currentOpponent != player.name) {
-                    currentOpponent = divas[q];
+                if (currentOpponent === divas[w].name && currentOpponent != player.name) {
+                    currentOpponent = divas[w];
                     console.log(currentOpponent);
                     // hide player from available divas arena and show player's diva in YOUR DIVA with inherited attributes
                     $("#" + currentOpponent.name).hide(); // also can be expressed as a template literal: $(`#${currentOpponent.name}`).hide();
