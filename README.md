@@ -9,6 +9,9 @@ This was our first homework, advanced assignment, using jQuery, manipulating the
 * If you lose, the game resets
 * Give the user game cues displayed on the page (health, attacks, who the players are, etc.)
 
+## GitHub Pages Link
+https://bretgithub.github.io/unit_4_game/
+
 ## Areas to improve
 Where I wanted to improve the game with added logic is listed below
 * Randomize the track playlist and loop
