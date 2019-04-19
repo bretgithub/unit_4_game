@@ -112,7 +112,7 @@ function startGame() {
 
     // replace the slay arena hp for divas with real time data
     function slayDialogue() {
-        $("#slay-dialogue").html("<p> You've dealt '" + currentOpponent.name + "' '" + charSlay + "' points of SLAY damage </p>");
+        $("#slay-dialogue").html("<p> You've dealt '" + currentOpponent.name + "' '" + playerSlay + "' points of SLAY damage </p>");
         $("#slay-dialogue").append("<p> You've been dealt '" + oppSlay + "' points of SLAY damage by '" + currentOpponent.name + "' </p>");
     }
 
