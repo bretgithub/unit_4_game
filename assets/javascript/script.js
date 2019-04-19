@@ -126,10 +126,10 @@ function startGame() {
             playerSlay = Math.floor(Math.random() * player.slay) + 1;
             oppSlay = Math.floor(Math.random() * currentOpponent.slay) + 1;
             // deals slay attack to opponent
-            currentOpponent.hp = currentOpponent.hp - charSlay;
+            currentOpponent.hp = currentOpponent.hp - playerSlay;
             // displays slay dealt
             $("#opposing-health").html("Health: " + currentOpponent.hp);
-            console.log("Player SLAY points: " + charSlay)
+            console.log("Player SLAY points: " + playerSlay)
             // calls function to update diva's attributes
             slayDialogue();
 
