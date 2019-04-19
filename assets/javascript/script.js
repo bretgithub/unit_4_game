@@ -123,7 +123,7 @@ function startGame() {
             console.log("Player HP: " + player.hp);
             console.log("Opponent HP: " + currentOpponent.hp);
             // gets slay power at random from maximum 
-            charSlay = Math.floor(Math.random() * player.slay) + 1;
+            playerSlay = Math.floor(Math.random() * player.slay) + 1;
             oppSlay = Math.floor(Math.random() * currentOpponent.slay) + 1;
             // deals slay attack to opponent
             currentOpponent.hp = currentOpponent.hp - charSlay;
